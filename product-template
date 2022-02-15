@@ -1,0 +1,26 @@
+ <div class="desktop-slider-only">
+        <div class="slider_slider-main">
+
+
+          <div class="slider-parent">
+            <div class="slide-thumb">
+
+              {% for image in product.images %}
+              <div class="gallery-img-main" value="{{variant.id}}"> 
+                <img src="{{ image.src | product_img_url: 'master' }}" >
+              </div>
+              {% endfor %}
+            </div> 
+          </div>
+
+
+          <div class="slider slide-pro">
+
+            {% for image in product.images %}
+            <div class="gallery-img product__images"> 
+              <img id="zoom" class="elevate-zoom" src="{{ image.src | product_img_url: '500x500' }}" data-zoom-image="{{ image.src | product_img_url: '2048x2048' }}">
+            </div>
+            {% endfor %}
+          </div> 
+        </div>
+      </div>
